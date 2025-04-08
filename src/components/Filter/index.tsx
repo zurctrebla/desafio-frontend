@@ -8,7 +8,7 @@ interface FilterComponentProps {
 }
 
 const FilterComponent: React.FC<FilterComponentProps> = ({ visible }) => {
-  const locales = ["Espanha", "Itália", "Japão"];
+  const locales = ["es-ES", "fr-FR", "pt-PT"];
   const resolutions = ["small", "medium", "large"];
 
   const resolutionsMap = {
@@ -17,11 +17,22 @@ const FilterComponent: React.FC<FilterComponentProps> = ({ visible }) => {
     large: "4K",
   };
 
+  const localesMap = {
+    "es-ES": "Espanha",
+    "fr-FR": "França",
+    "pt-PT": "Portugal",
+  };
+
   if (!visible) return null;
 
   return (
     <Container>
-      <FilterGroup title="Localidades" groupKey="locales" options={locales} />
+      <FilterGroup
+        title="Localidades"
+        groupKey="locales"
+        options={locales}
+        displayMap={localesMap}
+      />
 
       <FilterGroup
         title="Resoluções"

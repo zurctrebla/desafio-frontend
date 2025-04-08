@@ -44,7 +44,10 @@ export const VideosProvider: React.FunctionComponent<{
     const filterResolution = filters.resolutions?.length
       ? `&size=${filters.resolutions}`
       : "";
-    return `${API_BASE_URL}?query=${searchQuery}&per_page=${quantityPerPage}&page=${page}${filterResolution}`;
+    const filterLocale = filters.locales?.length
+      ? `&locale=${filters.locales}`
+      : "";
+    return `${API_BASE_URL}?query=${searchQuery}&per_page=${quantityPerPage}&page=${page}${filterResolution}${filterLocale}`;
   };
 
   const fetchVideos = async (page: number = 1) => {

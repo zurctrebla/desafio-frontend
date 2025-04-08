@@ -27,7 +27,7 @@ export const FilterProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [selected, setSelected] = useState<Filters>({
-    locales: ["Espanha"],
+    locales: ["pt-PT"],
     resolutions: ["small"],
   });
   const [searchParam, setSearchParam] = useState<string>("");
